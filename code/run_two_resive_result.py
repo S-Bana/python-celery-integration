@@ -10,4 +10,4 @@ result = add.delay(5,8)
 # print(result.get(timeout=3))
 
 if result.ready():
-    print(result.get(timeout=3))
+    print(result.get())
