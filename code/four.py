@@ -1,5 +1,7 @@
 from time import sleep
 from celery import Celery
+from celery import signature
+
 
 # Configure the Celery app to use RabbitMQ
 app = Celery(
@@ -16,8 +18,6 @@ def add(x, y):
     sleep(5)
     return (x+y)
 
-
-from celery import signature
 
 result = add.signature(args=(3, 4))
 print(result.delay())
